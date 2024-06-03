@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Store - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS for grid layout */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+            gap: 20px; /* Gap between grid items */
+        }
+
+        .product {
+            text-align: center; /* Center align text */
+            border: 1px solid #ccc; /* Add border for product cards */
+            padding: 10px; /* Add padding inside product cards */
+        }
+
+        .product img {
+            max-width: 100%; /* Ensure images fit within their containers */
+            margin-bottom: 10px; /* Add margin below images */
+        }
+
+        /* CSS for cart icon button */
+        .cart-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cart-button img {
+            width: 30px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav></nav>
+        <ul>
+            <li><button class="cart-button" onclick="goToCart()"><img src="shoppingcart.svg" alt="Cart"></button></li> <!-- Cart icon button -->
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welkom in mijn boekenwinkel</h1>
+        <h3>Onderzoek onze selectie van boeken voor kinderen van alle leeftijden.</h3
+        >
+
+        <!-- Product Cards -->
+        <div class="product">
+            <img src="deheksvanebenvloed.jpeg" alt="De heks van eb en vloed">
+            <h2>De heks van eb en vloed</h2>
+            <p>271 bladzijdes door Thea Stilton</p>
+            <button onclick="addToCart('De heks van eb en vloed')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="flipfiasco.jpeg" alt="flip fiasco">
+            <h2>Flip fliasco</h2>
+            <p>287 bladzijdes door Stephan Pastis</p>
+            <button onclick="addToCart('Flip fiasco')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="grotevragen.jpeg" alt="Grote vragen van kleine mensen">
+            <h2>Grote vragen van kleine mensen</h2>
+            <p>281 bladzijdes door Gemma Elwin Harris</p>
+            <button onclick="addToCart('Grote vragen van kleine mensen')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="heerridderlouis.jpeg" alt="Heer ridder louis">
+            <h2>Heer ridder louis</h2>
+            <p>303 bladzijdes door Myles & Greg Mcleod</p>
+            <button onclick="addToCart('Heer ridder louis')">Add to Cart</button>
+
+        </div>
+
+        <div class="product">
+            <img src="hoteldegrotel.jpeg" alt="Hotel de grote">
+            <h2>Hotel de grote</h2>
+            <p>228 bladzijdes door Sjoerd Kuyper</p>
+            <button onclick="addToCart('Hotel de grote')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="ikleesalgoed.jpeg" alt="Ik lees al goed">
+            <h2>Ik lees al goed</h2>
+            <p>Onbekend bladzijdes door Walter Oliviers</p>
+            <button onclick="addToCart('Ik lees al goed')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="kinderencyclopedie.jpeg" alt="De eerste kinder encyclopedia">
+            <h2>De eerste kinder encyclopedia</h2>
+            <p>192 bladzijdes schrijver onbekend</p>
+            <button onclick="addToCart('De eerste kinder encyclopedia')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="mementomonstrum.jpeg" alt="mementomonstrum">
+            <h2>memento monstrum</h2>
+            <p>192 bladzijdes door Jochen Till</p>
+            <button onclick="addToCart('mementomonstrum.jpeg')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="ridders.jpeg" alt="Ridders">
+            <h2>Ridders</h2>
+            <p>123 bladzijdes door Sarah devos</p>
+            <button onclick="addToCart('Ridders')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="vlindersinjebuik.jpeg" alt="Vlinders in je buik">
+            <h2>Vlinders in je buik</h2>
+            <p>115 paginas door Geronimo Stilton</p>
+            <button onclick="addToCart('Vlinders in je buik')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="wieheeftdatgedaan.jpeg" alt="Wie heeft dat gedaan">
+            <h2>Wie heeft dat gedaan</h2>
+            <p>95 paginas door Moon</p>
+            <button onclick="addToCart('Wie heeft dat gedaan')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="zombiegoudvis2.jpeg" alt="Mijn dikke vette zombie goudvis 2">
+            <h2>Mijn dikke vette zombie goudvis 2</h2>
+            <p>176 paginas door Mo o'hara</p>
+            <button onclick="addToCart('Mijn dikke vette zombie goudvis 2')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="zombiegoudvis3.jpeg" alt="Mijn dikke vette zombie goudvis 3">
+            <h2>Mijn dikke vette zombie goudvis 3</h2>
+            <p>188 paginas door Mo o'hara</p>
+            <button onclick="addToCart('Mijn dikke vette zombie goudvis 3')">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Cart -->
+    <script>
+        // Function to add item to cart
+        function addToCart(item) {
+            // Get existing cart items from localStorage or initialize an empty array
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            // Add new item to the cart
+            cartItems.push(item);
+            // Save updated cart items back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            // Alert the user that the item has been added
+            alert(item + ' Sam is the best added to cart!');
+        }
+
+        // Function to navigate to cart.html
+        function goToCart() {
+            window.location.href = 'cart.html'; // Redirect to cart.html
+        }
+    </script>
+
+</body>
+</html>
