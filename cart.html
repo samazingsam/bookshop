@@ -50,13 +50,23 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        .total-cost {
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <button class="back-button" onclick="goBack()">Back</button>
-    <h1>Your Shopping Cart</h1>
+    <h1>jouw winkel wagen</h1>
     <div class="cart-items" id="cart-items">
         <!-- Cart items will be dynamically inserted here -->
+    </div>
+    <div class="total-cost" id="total-cost">
+        <!-- Total cost will be dynamically inserted here -->
     </div>
     <button class="checkout-button" onclick="checkout()">Checkout</button>
 
@@ -72,20 +82,28 @@
         // Function to render cart items
         function renderCartItems() {
             const cartItemsContainer = document.getElementById('cart-items');
+            const totalCostContainer = document.getElementById('total-cost');
             cartItemsContainer.innerHTML = '';
+            totalCostContainer.innerHTML = '';
+
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                cartItemsContainer.innerHTML = '<p>jouw winkel wagen is leeg.</p>';
                 return;
             }
+
+            let totalCost = 0;
             cart.forEach((item, index) => {
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
                 cartItem.innerHTML = `
-                    <span>${item.name} - $${item.price}</span>
+                    <span>${item.name} - €${item.price.toFixed(2)}</span>
                     <button onclick="removeFromCart(${index})">Delete</button>
                 `;
                 cartItemsContainer.appendChild(cartItem);
+                totalCost += item.price;
             });
+
+            totalCostContainer.innerHTML = `Totale kosten: €${totalCost.toFixed(2)}`;
         }
 
         // Function to remove item from cart
@@ -98,7 +116,7 @@
         // Function to handle checkout
         function checkout() {
             if (cart.length === 0) {
-                alert('Your cart is empty!');
+                alert('jouw wagen is leeg!');
             } else {
                 window.location.href = 'pay.html';
             }

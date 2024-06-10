@@ -43,7 +43,7 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav></nav>
+    <nav>
         <ul>
             <li><button class="cart-button" onclick="goToCart()"><img src="shoppingcart.svg" alt="Cart"></button></li> <!-- Cart icon button -->
         </ul>
@@ -52,100 +52,111 @@
     <!-- Main Content -->
     <div class="container">
         <h1>Welkom in mijn boekenwinkel</h1>
-        <h3>Onderzoek onze selectie van boeken voor kinderen van alle leeftijden.</h3
-        >
+        <h3>Onderzoek onze selectie van boeken voor kinderen van alle leeftijden.</h3>
 
         <!-- Product Cards -->
         <div class="product">
             <img src="deheksvanebenvloed.jpeg" alt="De heks van eb en vloed">
             <h2>De heks van eb en vloed</h2>
             <p>271 bladzijdes door Thea Stilton</p>
-            <button onclick="addToCart('De heks van eb en vloed')">Add to Cart</button>
+            <p>Prijs: €10,00</p>
+            <button onclick="addToCart('De heks van eb en vloed', 15.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="flipfiasco.jpeg" alt="flip fiasco">
-            <h2>Flip fliasco</h2>
+            <h2>Flip fiasco</h2>
             <p>287 bladzijdes door Stephan Pastis</p>
-            <button onclick="addToCart('Flip fiasco')">Add to Cart</button>
+            <p>Prijs: €10,00</p>
+            <button onclick="addToCart('Flip fiasco', 12.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="grotevragen.jpeg" alt="Grote vragen van kleine mensen">
             <h2>Grote vragen van kleine mensen</h2>
             <p>281 bladzijdes door Gemma Elwin Harris</p>
-            <button onclick="addToCart('Grote vragen van kleine mensen')">Add to Cart</button>
+            <p>Prijs: €10.99</p>
+            <button onclick="addToCart('Grote vragen van kleine mensen', 10.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="heerridderlouis.jpeg" alt="Heer ridder louis">
             <h2>Heer ridder louis</h2>
             <p>303 bladzijdes door Myles & Greg Mcleod</p>
-            <button onclick="addToCart('Heer ridder louis')">Add to Cart</button>
-
+            <p>Prijs: €10.99</p>
+            <button onclick="addToCart('Heer ridder louis', 14.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="hoteldegrotel.jpeg" alt="Hotel de grote">
             <h2>Hotel de grote</h2>
             <p>228 bladzijdes door Sjoerd Kuyper</p>
-            <button onclick="addToCart('Hotel de grote')">Add to Cart</button>
+            <p>Prijs: €6.99</p>
+            <button onclick="addToCart('Hotel de grote', 9.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="ikleesalgoed.jpeg" alt="Ik lees al goed">
             <h2>Ik lees al goed</h2>
             <p>Onbekend bladzijdes door Walter Oliviers</p>
-            <button onclick="addToCart('Ik lees al goed')">Add to Cart</button>
+            <p>Prijs: €6.99</p>
+            <button onclick="addToCart('Ik lees al goed', 6.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="kinderencyclopedie.jpeg" alt="De eerste kinder encyclopedia">
             <h2>De eerste kinder encyclopedia</h2>
             <p>192 bladzijdes schrijver onbekend</p>
-            <button onclick="addToCart('De eerste kinder encyclopedia')">Add to Cart</button>
+            <p>Prijs: €7.99</p>
+            <button onclick="addToCart('De eerste kinder encyclopedia', 19.99)">Add to Cart</button>
         </div>
 
         <div class="product">
-            <img src="mementomonstrum.jpeg" alt="mementomonstrum">
+            <img src="mementomonstrum.jpeg" alt="memento monstrum">
             <h2>memento monstrum</h2>
             <p>192 bladzijdes door Jochen Till</p>
-            <button onclick="addToCart('mementomonstrum.jpeg')">Add to Cart</button>
+            <p>Prijs: €13.99</p>
+            <button onclick="addToCart('memento monstrum', 11.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="ridders.jpeg" alt="Ridders">
             <h2>Ridders</h2>
             <p>123 bladzijdes door Sarah devos</p>
-            <button onclick="addToCart('Ridders')">Add to Cart</button>
+            <p>Prijs: €13.99</p>
+            <button onclick="addToCart('Ridders', 13.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="vlindersinjebuik.jpeg" alt="Vlinders in je buik">
             <h2>Vlinders in je buik</h2>
             <p>115 paginas door Geronimo Stilton</p>
-            <button onclick="addToCart('Vlinders in je buik')">Add to Cart</button>
+            <p>Prijs: €7.99</p>
+            <button onclick="addToCart('Vlinders in je buik', 7.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="wieheeftdatgedaan.jpeg" alt="Wie heeft dat gedaan">
             <h2>Wie heeft dat gedaan</h2>
             <p>95 paginas door Moon</p>
-            <button onclick="addToCart('Wie heeft dat gedaan')">Add to Cart</button>
+            <p>Prijs: €8.99</p>
+            <button onclick="addToCart('Wie heeft dat gedaan', 8.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="zombiegoudvis2.jpeg" alt="Mijn dikke vette zombie goudvis 2">
             <h2>Mijn dikke vette zombie goudvis 2</h2>
             <p>176 paginas door Mo o'hara</p>
-            <button onclick="addToCart('Mijn dikke vette zombie goudvis 2')">Add to Cart</button>
+            <p>Prijs: €9.99</p>
+            <button onclick="addToCart('Mijn dikke vette zombie goudvis 2', 9.99)">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="zombiegoudvis3.jpeg" alt="Mijn dikke vette zombie goudvis 3">
             <h2>Mijn dikke vette zombie goudvis 3</h2>
             <p>188 paginas door Mo o'hara</p>
-            <button onclick="addToCart('Mijn dikke vette zombie goudvis 3')">Add to Cart</button>
+            <p>Prijs: €9.99</p>
+            <button onclick="addToCart('Mijn dikke vette zombie goudvis 3', 9.99)">Add to Cart</button>
         </div>
 
     </div>
@@ -153,15 +164,22 @@
     <!-- JavaScript for Cart -->
     <script>
         // Function to add item to cart
-        function addToCart(item) {
+        function addToCart(name, price) {
             // Get existing cart items from localStorage or initialize an empty array
-            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            // Add new item to the cart
-            cartItems.push(item);
-            // Save updated cart items back to localStorage
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-            // Alert the user that the item has been added
-            alert(item + ' Sam is the best added to cart!');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            // Check if the item is already in the cart
+            let itemIndex = cart.findIndex(item => item.name === name);
+            if (itemIndex === -1) {
+                // Add new item to the cart
+                cart.push({ name: name, price: price });
+                // Save updated cart items back to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                // Alert the user that the item has been added
+                alert(name + ' added to cart!');
+            } else {
+                // Alert the user that the item is already in the cart
+                alert(name + ' is already in your cart!');
+            }
         }
 
         // Function to navigate to cart.html
